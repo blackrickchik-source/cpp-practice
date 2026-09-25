@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    long long int n,nk=0;
+    int k,arr[100],i=0,multi=1,sum=0;
+    cin>>n>>k;
+    while(n!=0)
+    {
+        arr[i]=n%k;
+        n=n/k;
+        i++;
+    }
+    reverse(arr,arr+i);
+    for(int j=0;j<i;j++)
+    {
+        multi*=arr[j];
+        sum+=arr[j];
+    }
+    cout<<multi-sum<<endl;
+    return 0;
+}
